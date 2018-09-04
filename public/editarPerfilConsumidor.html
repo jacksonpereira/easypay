@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeControllerEditarPerfilConsumidor">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>EasyPay - Menu Estabelecimento</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styleMenu.css">
+</head>
+
+<body ng-controller="ControllerEditarPerfilConsumidor" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container">
+        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-top" style="margin-bottom: 0px">
+            <a class="navbar-brand" href="menuEstabelecimento.html">
+                <img src="assets/img/logo2.png" height="60px" class="d-inline-block align-top">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="/menuConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Pesquisar Produtos</button>
+                    </a>
+                    <a href="/perfilConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Meu Perfil</button>
+                    </a>
+                    <a href="/editarPerfilConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Editar Perfil</button>
+                    </a>
+                    <a href="/listaFavoritos.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Favoritos</button>
+                    </a>
+                    <button class="btn btn-danger my-2 my-sm-0" type="button" style="margin-right: 5px" ng-click="sair()">Sair</button>
+                </form>
+            </div>
+        </nav>
+        <!-- Content -->
+        <div class="container-fluid">
+            <div class="row border-bottom">
+                <h4 class="text-left" style="margin-top: 20px; margin-bottom: 10px; text-transform: uppercase">Editar perfil</h4>
+            </div>
+            <!-- Produto -->
+            <div class="row" style="margin-top: 15px">
+                <div class="col-12 align-self-center">
+                    <form name="formCadastro" accept-charset="utf-8" class="form-group">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input type="text" ng-model="consumidor.nome" class="form-control form-control-md" placeholder="Nome" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <input type="text" ng-model="consumidor.email" class="form-control form-control-md" placeholder="Email" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" ng-model="consumidor.senha" class="form-control form-control-md" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary btn-lg btn-block" style="text-transform: uppercase" ng-click="editarPerfil(consumidor)">Atualizar</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="reset" class="btn btn-secondary btn-lg btn-block btn-danger" style="text-transform: uppercase">Resetar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerEditarPerfilConsumidorFront.js"></script>
+</body>
+
+</html>

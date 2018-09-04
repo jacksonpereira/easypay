@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeControllerEditarPerfilEstabelecimento">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>EasyPay - Perfil do Estabelecimento</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styleMenu.css">
+</head>
+
+<body ng-controller="ControllerEditarPerfilEstabelecimento" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container">
+        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-top" style="margin-bottom: 0px">
+            <a class="navbar-brand" href="menuEstabelecimento.html">
+                <img src="assets/img/logo2.png" height="60px" class="d-inline-block align-top">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="/menuEstabelecimento.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Meus Produtos</button>
+                    </a>
+                    <a href="/perfilEstabelecimento.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Meu Perfil</button>
+                    </a>
+                    <a href="/editarPerfilEstabelecimento.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Editar Perfil</button>
+                    </a>
+                    <a href="/cadastrarProduto.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Cadastrar Produto</button>
+                    </a>
+                    <button class="btn btn-danger my-2 my-sm-0" type="button" style="margin-right: 5px" ng-click="sair()">Sair</button>
+                </form>
+            </div>
+        </nav>
+        <!-- Content -->
+        <div class="container-fluid">
+            <div class="row border-bottom">
+                <h4 class="text-left" style="margin-top: 20px; margin-bottom: 10px; text-transform: uppercase">Meu Perfil</h4>
+            </div>
+            <!-- Descrição do estabelecimento -->
+            <div class="row" style="margin: 15px auto auto auto; font-size: 14pt; width: 650px">
+                <div class="col-lg-6">
+                    <strong>
+                        <div>CNPJ: </div>
+                    </strong>
+                    {{estabelecimento._id}}
+                </div>
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Nome Fantasia: </div>
+                    </strong>
+                    {{estabelecimento.nome_fantasia}}
+                </div>
+            </div>
+            <div class="row" style="margin: 15px auto auto auto; font-size: 14pt; width: 650px">
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Razão Social: </div>
+                    </strong>
+                    {{estabelecimento.razao_social}}
+                </div>
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Logradouro: </div>
+                    </strong>
+                    {{estabelecimento.logradouro}}, {{estabelecimento.numero}}
+                </div>
+            </div>
+            <div class="row" style="margin: 15px auto auto auto; font-size: 14pt; width: 650px">
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Telefone: </div>
+                    </strong>
+                    {{estabelecimento.telefone}}
+                </div>
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Complemento: </div>
+                    </strong>
+                    {{estabelecimento.complemento}}
+                </div>
+            </div>
+            <div class="row" style="margin: 15px auto auto auto; font-size: 14pt; width: 650px">
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Bairro: </div>
+                    </strong>
+                    {{estabelecimento.bairro}}
+                </div>
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Cidade: </div>
+                    </strong>
+                    {{estabelecimento.cidade}} - {{estabelecimento.estado}}
+                </div>
+            </div>
+            <div class="row" style="margin: 15px auto auto auto; font-size: 14pt; width: 650px">
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Email: </div>
+                    </strong>
+                    {{estabelecimento.email}}
+                </div>
+                <div class="col-lg-6">
+                    <strong>
+                        <div>Senha: </div>
+                    </strong>
+                    {{estabelecimento.senha}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerEditarPerfilEstabelecimentoFront.js"></script>
+</body>
+
+</html>

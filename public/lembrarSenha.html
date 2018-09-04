@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeLoginFront">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="assets/img/Favicon.ico">
+    <title>EasePay - Lembrar senha</title>
+</head>
+
+<body ng-controller="ControllerLogin" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container">
+        <a href="/">
+            <img src="assets/img/logo.png" alt="">
+        </a>
+        <form action="" method="" accept-charset="utf-8" class="form-group">
+            <h5>lembrar a senha</h5>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" ng-model="pesquisa" class="form-control form-control-md" placeholder="Digite o CNPJ ou CPF">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="lembrarSenha(pesquisa)">ENVIAR</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="reset" class="btn btn-danger btn-lg btn-block">LIMPAR</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="cadastro">
+        <div class="block">
+            <span>Cadastre-se</span>
+        </div>
+        <div class="block">
+            <a href="cadastroConsumidor.html">Consumidor</a>
+        </div>
+        <div class="block">
+            <a href="cadastroEstabelecimento.html">Estabelecimento</a>
+        </div>
+    </div>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerLoginFront.js"></script>
+</body>
+
+</html>

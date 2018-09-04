@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeControllerConsumidorFront">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>EasyPay - Menu Consumidor</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styleMenu.css">
+</head>
+
+<body ng-controller="ControllerConsumidor" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container">
+        <!-- Navbar content -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-top" style="margin-bottom: 0px">
+            <a class="navbar-brand" href="menuEstabelecimento.html">
+                <img src="assets/img/logo2.png" height="60px" class="d-inline-block align-top">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="/menuConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Pesquisar Produtos</button>
+                    </a>
+                    <a href="/perfilConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Meu Perfil</button>
+                    </a>
+                    <a href="/editarPerfilConsumidor.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Editar Perfil</button>
+                    </a>
+                    <a href="/listaFavoritos.html">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="button" style="margin-right: 5px">Favoritos</button>
+                    </a>
+                    <button class="btn btn-danger my-2 my-sm-0" type="button" style="margin-right: 5px" ng-click="sair()">Sair</button>
+                </form>
+            </div>
+        </nav>
+        <!-- Content -->
+        <div class="container-fluid border-bottom">
+            <div class="row border-bottom">
+                <h4 class="text-left" style="margin-top: 20px; margin-bottom: 10px; text-transform: uppercase">Pesquisar produto</h4>
+            </div>
+            <!-- Form de busca -->
+            <form class="form-group" style="margin-top: 15px">
+                <div class="form-group row">
+                    <div class="col-sm-7">
+                        <input type="text" ng-model="pesquisa.nome" class="form-control form-control-lg" placeholder="Pesquise pelo produto" required>
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="number" ng-model="pesquisa.distancia" class="form-control form-control-lg" placeholder="Distância" required>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-primary btn-block btn-lg" type="submit" ng-click="buscarProduto(pesquisa)">Pesquisar</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Produtos -->
+            <!-- <div class="row" ng-repeat="produto in produtos orderBy produto.distancia" style="margin-top: 15px"> -->
+            <div class="row" style="margin-top: 15px" ng-repeat="produto in produtos | orderBy: 'distancia'">
+                <div class="col-2 align-self-center">
+                    <img src="assets/img/produtos/{{produto.imagem}}" style="height: 150px">
+                </div>
+                <div class="col-10 align-self-center">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0 d-inline my-2">
+                                {{produto.nome}}
+                            </h5>
+                            <button class="btn btn-primary my-2 my-sm-0 float-sm-right d-inline" type="button" style="margin-right: 5px" ng-click="buscarEstabelecimento(produto.estabelecimento)">Ver estabelecimento</button>
+                            <button class="btn btn-primary my-2 my-sm-0 float-sm-right d-inline" type="button" style="margin-right: 5px" ng-click="favoritarProduto(produto)">Favoritar</button>
+                            <span class=" float-sm-right d-inline my-2" style="margin-right: 30px">
+                                <strong>Distância:</strong> {{produto.distancia}}Km</span>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <strong>Código de barras:</strong>
+                                        </div>
+                                        <div class="row">
+                                            {{produto.codigoDeBarras}}
+                                        </div>
+                                        <div class="row">
+                                            <strong>Descrição:</strong>
+                                        </div>
+                                        <div class="row">
+                                            {{produto.descricao}}
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <strong>Quantidade:</strong>
+                                        </div>
+                                        <div class="row">
+                                            {{produto.peso}}
+                                        </div>
+                                        <div class="row">
+                                            <strong>Valor</strong>
+                                        </div>
+                                        <div class="row">
+                                            R$ {{produto.valor}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerConsumidorFront.js"></script>
+</body>
+
+</html>

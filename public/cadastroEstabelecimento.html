@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeControllerEstabelecimentoFront">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <title>EasyPay - Cadastro de estabelecimento</title>
+</head>
+
+<body ng-controller="ControllerEstabelecimento" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container">
+        <a href="/">
+            <img src="assets/img/logo.png" alt="">
+        </a>
+        <form name="formCadastro" accept-charset="utf-8" class="form-group">
+            <h5>cadastrar estabelecimento</h5>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" ng-model="estabelecimento.nome_fantasia" class="form-control form-control-md" placeholder="Nome fantasia"
+                        required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" ng-model="estabelecimento.razao_social" class="form-control form-control-md" placeholder="Razão social"
+                        required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <input type="text" ng-model="estabelecimento.cnpj" class="form-control form-control-md" placeholder="CNPJ" required>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" ng-model="estabelecimento.telefone" class="form-control form-control-md" placeholder="Telefone" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9">
+                    <input type="text" ng-model="estabelecimento.logradouro" class="form-control form-control-md" placeholder="Rua/Avenida" required>
+                </div>
+                <div class="col-sm-3">
+                    <input type="number" ng-model="estabelecimento.numero" class="form-control form-control-md" placeholder="Nº" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" ng-model="estabelecimento.complemento" class="form-control form-control-md" placeholder="Complemento">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" ng-model="estabelecimento.bairro" class="form-control form-control-md" placeholder="Bairro" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9">
+                    <input type="text" ng-model="estabelecimento.cidade" class="form-control form-control-md" placeholder="Cidade" required>
+                </div>
+                <div class="col-sm-3">
+                    <select ng-model="estabelecimento.estado" class="form-control form-control-md" required>
+                        <option value="" selected></option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RR">RR</option>
+                        <option value="RO">RO</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="text" ng-model="estabelecimento.email" class="form-control form-control-md" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="password" ng-model="estabelecimento.senha" class="form-control form-control-md" placeholder="Senha" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" ng-model="estabelecimento.repetirSenha" class="form-control form-control-md" placeholder="Repetir senha"
+                        required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary btn-lg btn-block" style="text-transform: uppercase" ng-click="cadastro(estabelecimento)">Cadastrar</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="reset" class="btn btn-secondary btn-lg btn-block btn-danger" style="text-transform: uppercase">Limpar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="cadastro">
+        <div class="block">
+            <span>Cadastre-se</span>
+        </div>
+        <div class="block">
+            <a href="cadastroConsumidor.html">Consumidor</a>
+        </div>
+    </div>
+
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerEstabelecimentoFront.js"></script>
+</body>
+
+</html>

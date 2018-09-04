@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="routeLoginFront">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="assets/img/Favicon.ico">
+    <title>Ea$yP@y - Login</title>
+</head>
+
+<body ng-controller="ControllerLogin" style="background-image: url('./assets/img/background_02.jpg'); background-repeat: no-repeat; background-attachment: fixed">
+    <div id="container" style="width: 500px; border-radius: 10px">
+        <img src="./assets/img/logo.png" alt="">
+        <form name="formLogin" accept-charset="utf-8" class="form-group" style="width: 450px; margin: auto">
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="email" ng-model="usuario.email" class="form-control form-control-lg" id="edtEmail" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="password" ng-model="usuario.senha" class="form-control form-control-lg" id="edtSenha" placeholder="Senha" required>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="login(usuario)">Entrar</button>
+                <button type="reset" class="btn btn-secondary btn-lg btn-block btn-danger">Limpar</button>
+            </div>
+            <div class="block" style="margin-top: 15px; text-transform: uppercase">
+                <a href="lembrarSenha.html" style="font-size: 13pt">Esqueci minha senha</a>
+            </div>
+        </form>
+    </div>
+    <div class="cadastro">
+        <div class="block">
+            <span>Cadastre-se</span>
+        </div>
+        <div class="block">
+            <a href="cadastroConsumidor.html">Consumidor</a>
+        </div>
+        <div class="block">
+            <a href="cadastroEstabelecimento.html">Estabelecimento</a>
+        </div>
+    </div>
+
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/controllerLoginFront.js"></script>
+</body>
+
+</html>
